@@ -38,7 +38,7 @@ class YaUploader:
 if __name__ == '__main__':
     # Получить путь к загружаемому файлу и токен от пользователя
     path_to_file = 'http_Task_2\\testfile.txt'
-    token = 'y0_AgAAAAACGwE6AADLWwAAAADaxvFJ-xudrAWdQDe-CXWO3osB5bOw_X4'
+    token = 'sample token'
     uploader = YaUploader(token)
     result = uploader.upload(path_to_file)
     if result == 201:
