@@ -1,5 +1,4 @@
 import requests
-from pprint import pprint
 
 class YaUploader:
     def __init__(self, token: str):
