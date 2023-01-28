@@ -26,7 +26,10 @@ class YaUploader:
         my_href = res.json()['href']
 
         # загружаю файл
-        res = requests.put(my_href, data=open(file_path, 'rb'))
+        with open(file_path, 'rb') as my_file:
+            data = my_file.read()
+
+        res = requests.put(my_href, data=data)
         return res.status_code
 
 
@@ -37,7 +40,7 @@ class YaUploader:
 if __name__ == '__main__':
     # Получить путь к загружаемому файлу и токен от пользователя
     path_to_file = 'http_Task_2\\testfile.txt'
-    token = 'sample token'
+    token = ''
     uploader = YaUploader(token)
     result = uploader.upload(path_to_file)
     if result == 201:
