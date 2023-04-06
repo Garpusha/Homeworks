@@ -72,8 +72,7 @@ def get_details(headers_, my_list):
             description = description.text
         else:
             description = soup.find("div", class_="g-user-content").text
-        # if "Flask" in description and "Django" in description:
-        if True:
+        if "Flask" in description and "Django" in description:
             dict_details = {
                 "name": get_title(soup),
                 "link": url,
