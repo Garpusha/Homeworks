@@ -51,7 +51,7 @@ def load_data(my_session):
 
 def get_by_id(my_session, p_id):
     my_query = my_session.query(
-        m.Publisher.name, m.Book.title, m.Sale.price, m.Sale.date_sale, m.Shop.name
+        m.Publisher.name, m.Book.title, m.Sale.price, m.Sale.date_sale, m.Shop.name, m.Sale.count
     ).filter_by(id_publisher=p_id)
     my_query = my_query.join(m.Book, m.Book.id_publisher == m.Publisher.id_publisher)
     my_query = my_query.join(m.Stock, m.Stock.id_book == m.Book.id_book)
@@ -63,7 +63,7 @@ def get_by_id(my_session, p_id):
 
 def get_by_name(my_session, p_name):
     my_query = my_session.query(
-        m.Publisher.name, m.Book.title, m.Sale.price, m.Sale.date_sale, m.Shop.name
+        m.Publisher.name, m.Book.title, m.Sale.price, m.Sale.date_sale, m.Shop.name, m.Sale.count
     ).filter_by(name=p_name)
     my_query = my_query.join(m.Book, m.Book.id_publisher == m.Publisher.id_publisher)
     my_query = my_query.join(m.Stock, m.Stock.id_book == m.Book.id_book)
@@ -75,4 +75,4 @@ def get_by_name(my_session, p_name):
 
 def output(my_records_):
     for element in my_records_:
-        print(f"{element[1]} | {element[4]} | {element[2]} | {element[3].date()}")
+        print(f"{element[1]} | {element[4]} | {round(element[2] * element[5], 2)} | {element[3].date()}")
