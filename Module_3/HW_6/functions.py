@@ -1,9 +1,5 @@
-from sqlalchemy.orm import declarative_base, relationship
 import json
 import models as m
-
-# Base = declarative_base()
-
 
 def create_tables(engine):
     m.Base.metadata.drop_all(engine)
