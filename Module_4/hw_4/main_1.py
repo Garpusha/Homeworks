@@ -3,21 +3,20 @@ class FlatIterator:
     def __init__(self, list_of_list):
         self.l_of_l = list_of_list
 
-
     def __iter__(self):
-        print('Make the list flat again!')
-        self.flat_list = []
-        self.index = 0
+        self.index_1, self.index_2 = 0, 0
         return self
 
     def __next__(self):
-
-        if self.index == len(self.l_of_l):
+        if self.index_1 == len(self.l_of_l):
             raise StopIteration
-        # self.flat_list.extend(self.l_of_l[self.index])
-        self.flat_list.extend(self.l_of_l[self.index])
-        self.index += 1
-        return self.flat_list
+        item_1 = self.l_of_l[self.index_1]
+        item_2 = item_1[self.index_2]
+        self.index_2 += 1
+        if self.index_2 == len(item_1):
+            self.index_2 = 0
+            self.index_1 += 1
+        return item_2
 
 def test_1():
 
