@@ -1,0 +1,8 @@
+2023-04-13 14:40:49.223245 Function <function test_2.<locals>.hello_world at 0x000002AF1526B060> started with arguments (), {}.
+2023-04-13 14:40:49.223245 Function <function test_2.<locals>.hello_world at 0x000002AF1526B060> returned Hello World.
+2023-04-13 14:40:49.224245 Function <function test_2.<locals>.summator at 0x000002AF1526B380> started with arguments (2, 2), {}.
+2023-04-13 14:40:49.224245 Function <function test_2.<locals>.summator at 0x000002AF1526B380> returned 4.
+2023-04-13 14:40:49.225245 Function <function test_2.<locals>.div at 0x000002AF1526B2E0> started with arguments (6, 2), {}.
+2023-04-13 14:40:49.225245 Function <function test_2.<locals>.div at 0x000002AF1526B2E0> returned 3.0.
+2023-04-13 14:40:49.225245 Function <function test_2.<locals>.summator at 0x000002AF1526B380> started with arguments (4.3,), {'b': 2.2}.
+2023-04-13 14:40:49.225245 Function <function test_2.<locals>.summator at 0x000002AF1526B380> returned 6.5.
